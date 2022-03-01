@@ -41,11 +41,11 @@ How to run:
   - ./dict delete EBD:wa
 
 output dump:
-[prakash_kadam@perfweb-dur dict]$ ./dict insert EDB
-[prakash_kadam@perfweb-dur dict]$ ./dict search  EDB
+[prakash_kadam@Apple dict]$ ./dict insert EDB
+[prakash_kadam@Apple dict]$ ./dict search  EDB
 Match found for word: EDB
-[prakash_kadam@perfweb-dur dict]$ ./dict delete  EDB
+[prakash_kadam@Apple dict]$ ./dict delete  EDB
 Word removed from dictionary.
-[prakash_kadam@perfweb-dur dict]$ ./dict search  EDB
+[prakash_kadam@Apple dict]$ ./dict search  EDB
 Match is not found for word : EDB
-[prakash_kadam@perfweb-dur dict]$
+[prakash_kadam@Apple dict]$
