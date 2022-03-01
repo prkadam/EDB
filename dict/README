@@ -1,0 +1,51 @@
+Description:
+
+1. main.cpp:  Main driver
+2. dictionary.[cpp|h] : Dictionary class reads the shared memory and map it to in memory data structure
+3. sharedmem.h : Define class SharedMem, which is responsible to create and/or read shared memory
+4. memmap[cpp|h] : Define the memory mapper class. used to insert/search/delete a word.
+
+
+Assumption:
+  1. Total 1 M words in dictionary.
+  2. Max size of wach word is 16
+
+Because of these assumption, Memory of a program is fixed.
+
+Algorithm :
+  A. Insert :
+    1. for a given word a hash_id will be generated within range of [0-999999]
+    2. if that node is already occupied then collision will be resolved by using next free node.
+    3. word is saved at free node
+  B. Search:
+    1. for a given word a hash_id will be generated within range of [0-999999]
+    2. word is matched against the word saved at node index. if matched then return
+    3. If word does not match, then its collision scenario, scan complete array
+        If word match return else print message word not found 
+
+  C. Delete:
+    1. for a given word a hash_id will be generated within range of [0-999999]
+    2. word is matched against the word saved at node index. if matched then return
+    3. If word does not match, then its collision scenario, scan complete array
+        If word match 
+          free the node
+        else
+          print message word is not present in dictionary
+
+    
+How to run:
+  - make clean
+  - make
+  - ./dict insert EDB
+  - ./dict search EDB
+  - ./dict delete EBD:wa
+
+output dump:
+[prakash_kadam@perfweb-dur dict]$ ./dict insert EDB
+[prakash_kadam@perfweb-dur dict]$ ./dict search  EDB
+Match found for word: EDB
+[prakash_kadam@perfweb-dur dict]$ ./dict delete  EDB
+Word removed from dictionary.
+[prakash_kadam@perfweb-dur dict]$ ./dict search  EDB
+Match is not found for word : EDB
+[prakash_kadam@perfweb-dur dict]$
